@@ -1,27 +1,20 @@
-import React from "react";
-import logo from "./../styles/logo.svg";
-import "./../styles/App.css";
+import React from 'react'
+import logo from './../styles/logo.svg'
+import './../styles/App.css'
 
 function About(props) {
+  const { user } = props
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div className='App'>
+      <header className='App-header'>
+        <img src={logo} className='App-logo' alt='logo' />
 
-        {console.log(props)}
-
-        <p>About page</p>
-        <a
-          className="About-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          About page
-        </a>
+        <h3>{user.personalInfo.name}</h3>
+        <p>{user.employerInfo.carrer}</p>
       </header>
     </div>
-  );
+  )
 }
 
-export default About;
+export default About
