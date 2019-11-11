@@ -1,15 +1,16 @@
-import React from 'react';
-import logo from './../styles/logo.svg';
-import './../styles/App.css';
+import React from "react";
+import logo from "./../styles/logo.svg";
+import "./../styles/App.css";
 
-function About() {
+function About(props) {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-            About page
-        </p>
+
+        {console.log(props)}
+
+        <p>About page</p>
         <a
           className="About-link"
           href="https://reactjs.org"
