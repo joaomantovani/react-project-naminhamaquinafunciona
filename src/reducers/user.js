@@ -1,6 +1,8 @@
+import { UPDATE_USER_NAME } from '../actions/user'
+
 const INITIAL_STATE = {
   personalInfo: {
-    name: 'João Mantovani',
+    name: 'Primeiro usuário',
     id: 1,
   },
   employerInfo: {
@@ -8,6 +10,18 @@ const INITIAL_STATE = {
   },
 }
 
-export default function(state = INITIAL_STATE) {
-  return state
+export default function(state = INITIAL_STATE, action) {
+  switch (action.type) {
+    case UPDATE_USER_NAME:
+      return updateUserName(state, action.payload)
+    default:
+      return state
+  }
+}
+
+function updateUserName(state, data) {
+  const newState = { ...state }
+  newState.personalInfo.name = data
+
+  return Object.assign({}, state, { ...state })
 }

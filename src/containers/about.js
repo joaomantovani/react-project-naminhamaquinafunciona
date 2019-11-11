@@ -3,18 +3,20 @@ import { connect } from 'react-redux'
 import About from '../pages/About'
 
 const mapStateToProps = state => {
-    return { 
-        user: state.user
-    }
+  return {
+    user: state.user,
+  }
 }
 
 const mapDispatchToProps = dispatch => {
-    return {}
+  return {
+    updateUserName: data => alert(data),
+  }
 }
 
 export default withRouter(
-    connect(
-        mapStateToProps,
-        mapDispatchToProps
-    )(About)
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(About)
 )
